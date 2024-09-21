@@ -44,18 +44,3 @@ dict["gender"] = "Male"
 
 print(dict)
 print(dict["lastname"])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
