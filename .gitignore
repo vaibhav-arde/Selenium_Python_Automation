@@ -29,6 +29,7 @@ autopy/
 autopy
 .idea/
 .vscode/
+pythonBasics/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
