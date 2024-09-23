@@ -27,6 +27,11 @@ print(list)
 
 driver.find_element(By.CSS_SELECTOR, "img[alt='Cart']").click()
 driver.find_element(By.XPATH, "//button[text()='PROCEED TO CHECKOUT']").click()
+
+# Implicit wait
+# driver.implicitly_wait(5)
+
+# Explicit wait
 wait = WebDriverWait(driver, 8)
 wait.until(expected_conditions.presence_of_element_located((By.CLASS_NAME, "promoCode")))
 
