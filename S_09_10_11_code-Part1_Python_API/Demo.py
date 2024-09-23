@@ -48,7 +48,7 @@ print(list2)
 assert list == list2
 
 amount1= driver.find_element(By.CSS_SELECTOR, ".discountAmt").text
-
+print("amount1 : ", amount1)
 driver.find_element(By.CLASS_NAME, "promoCode").send_keys("rahulshettyacademy")
 driver.find_element(By.CSS_SELECTOR, ".promoBtn").click()
 print(driver.find_element(By.CSS_SELECTOR, "span.promoInfo").text)
@@ -66,7 +66,7 @@ for v in veggiesAmount:
 
 print(sum)
 
-# assert sum == int(amount2)
+assert sum == int(amount1)
 
 time.sleep(5)
 
