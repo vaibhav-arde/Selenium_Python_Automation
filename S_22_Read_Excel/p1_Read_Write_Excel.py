@@ -6,8 +6,9 @@ workbook = openpyxl.load_workbook(file_path)
 sheet = workbook.active
 cell = sheet.cell(row=1, column=2)
 print(cell.value)
-sheet.cell(row= 5, column= 1).value = "WriteData"
+sheet.cell(row= 4, column= 1).value = "User3Updated"
 print(sheet.cell(row= 5, column= 1).value)
+workbook.save("S_22_Read_Excel/dataUpdated.xlsx")
 
 print("Max Rows",sheet.max_row)
 print("Max Columns",sheet.max_column)
@@ -40,3 +41,11 @@ for i in range(2, sheet.max_row + 1):
     if sheet.cell(i,1).value == "user2":
         for j in range(1, sheet.max_column +1):
             print(sheet.cell(i,j).value)
+            
+print("Create Dictionary :")
+Dict ={}
+for i in range(2, sheet.max_row + 1):
+    if sheet.cell(i,1).value == "user2":
+        for j in range(1, sheet.max_column +1):
+            Dict[sheet.cell(1,j).value] = sheet.cell(i,j).value
+print("Dict : ", Dict)
