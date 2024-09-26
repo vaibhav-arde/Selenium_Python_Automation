@@ -27,5 +27,16 @@ for i in range(2, sheet.max_row+1):  # Replace 'A' with the desired column lette
     print(sheet.cell(row=i, column=1).value)
     
 print("Print values in Row : ")
-for i in range(1, sheet.max_row+1):  # Replace 'A' with the desired column letter
+for i in range(1, sheet.max_column+1):  # Replace 'A' with the desired column letter
     print(sheet.cell(row=1, column=i).value)
+    
+print("All data :")
+for i in range(2, sheet.max_row + 1):
+    for j in range(1, sheet.max_column +1):
+        print(sheet.cell(i,j).value)
+        
+print("All row for selected username :")
+for i in range(2, sheet.max_row + 1):
+    if sheet.cell(i,1).value == "user2":
+        for j in range(1, sheet.max_column +1):
+            print(sheet.cell(i,j).value)
