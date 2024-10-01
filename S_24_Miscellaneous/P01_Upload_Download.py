@@ -15,12 +15,14 @@ def update_excel_data(filePath, searchTerm, colName, new_value):
     for i in range(1,sheet.max_column+ 1):
         if sheet.cell(row=1,column=i).value == colName:
             Dict["col"] = i
+            print("Dict", Dict)
  
     for i in range(1,sheet.max_row+1):
         for j in range(1, sheet.max_column+1):
             if sheet.cell(row=i,column= j).value == searchTerm:
                 Dict["row"] = i
- 
+                print("Dict", Dict)
+    print("Dict", Dict)
     sheet.cell(row=Dict["row"], column=Dict["col"]).value = new_value
     book.save(file_path)
 
