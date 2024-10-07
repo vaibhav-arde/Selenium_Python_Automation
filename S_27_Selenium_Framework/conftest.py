@@ -33,7 +33,7 @@ def setup(request):
     
     driver.maximize_window()
     driver.implicitly_wait(10)
-    # driver.get("https://rahulshettyacademy.com/angularpractice/")
+    driver.get("https://rahulshettyacademy.com/angularpractice/")
     request.cls.driver = driver
     yield driver
     driver.quit()

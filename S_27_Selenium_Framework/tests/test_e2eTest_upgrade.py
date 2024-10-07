@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from utilities.BaseClass import BaseClass
+from pages.home_page import HomePage
 
 # @pytest.mark.usefixtures("setup")
 class TestOne(BaseClass):
@@ -14,9 +15,11 @@ class TestOne(BaseClass):
     def test_e2e(self):
         # driver = webdriver.Chrome()
         # driver.implicitly_wait(4)
-        self.driver.get("https://rahulshettyacademy.com/angularpractice/")
+        # self.driver.get("https://rahulshettyacademy.com/angularpractice/")
         #  //a[contains(@href,'shop')]    a[href*='shop']
-        self.driver.find_element(By.CSS_SELECTOR," a[href*='shop']").click()
+        homepage = HomePage(self.driver)
+        homepage.shopButton().click()
+        # self.driver.find_element(By.CSS_SELECTOR," a[href*='shop']").click()
         products = self.driver.find_elements(By.XPATH,"//div[@class='card h-100']")
 
         for product in products :
