@@ -6,11 +6,12 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from utilities.BaseClass import BaseClass
 
-@pytest.mark.usefixtures("setup")
-class TestOne :
+# @pytest.mark.usefixtures("setup")
+class TestOne(BaseClass):
     
-    def test_e2e(self, setup):
+    def test_e2e(self):
         # driver = webdriver.Chrome()
         # driver.implicitly_wait(4)
         self.driver.get("https://rahulshettyacademy.com/angularpractice/")
