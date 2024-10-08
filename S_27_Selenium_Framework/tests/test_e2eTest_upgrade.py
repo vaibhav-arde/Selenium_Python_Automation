@@ -60,4 +60,6 @@ class TestOne(BaseClass):
         successText = checkoutPage.success_alert_text()
         # successText = self.driver.find_element(By.CLASS_NAME,"alert-success").text
         assert "Success! Thank you!" in successText
+        
+        assert 1==2
         self.driver.close()
