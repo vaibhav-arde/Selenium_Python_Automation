@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 # from selenium.webdriver.support.wait import WebDriverWait
 from utilities.BaseClass import BaseClass
 from pages.home_page import HomePage
-from pages.products_page import ProductsPage
+# from pages.products_page import ProductsPage
 from pages.checkout_page import CheckoutPage
 
 # @pytest.mark.usefixtures("setup")
@@ -21,10 +21,10 @@ class TestOne(BaseClass):
         #  //a[contains(@href,'shop')]    a[href*='shop']
         
         homepage = HomePage(self.driver)
-        homepage.shopButton().click()
+        productsPage = homepage.shopButton()
         # self.driver.find_element(By.CSS_SELECTOR," a[href*='shop']").click()
         
-        productsPage= ProductsPage(self.driver)
+        # productsPage= ProductsPage(self.driver)
         products = productsPage.product_list()
         # products = self.driver.find_elements(By.XPATH,"//div[@class='card h-100']")
         
@@ -34,10 +34,10 @@ class TestOne(BaseClass):
         #     if productName == "Blackberry":
         #         product.find_element(By.XPATH, "div/button").click()
 
-        productsPage.checkout().click()
+        checkoutPage = productsPage.checkout()
         # self.driver.find_element(By.CSS_SELECTOR,"a[class*='btn-primary']").click()
         
-        checkoutPage = CheckoutPage(self.driver)
+        # checkoutPage = CheckoutPage(self.driver)
         checkoutPage.checkout().click()
         # self.driver.find_element(By.XPATH,"//button[@class='btn btn-success']").click()
         

@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from pages.products_page import ProductsPage
 
 
 class HomePage:
@@ -8,4 +9,5 @@ class HomePage:
         self.driver = driver
         
     def shopButton(self):
-        return self.driver.find_element(*HomePage.shop)
+        self.driver.find_element(*HomePage.shop).click()
+        return ProductsPage(self.driver)

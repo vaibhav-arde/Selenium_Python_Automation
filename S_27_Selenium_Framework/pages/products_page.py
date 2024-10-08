@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+from pages.checkout_page import CheckoutPage
 
 class ProductsPage:
     products = (By.XPATH,"//div[@class='card h-100']")
@@ -21,5 +21,6 @@ class ProductsPage:
                 product.find_element(*ProductsPage.add_btn).click()
                 
     def checkout(self):
-        return self.driver.find_element(*ProductsPage.checkout_btn)
+        self.driver.find_element(*ProductsPage.checkout_btn).click()
+        return CheckoutPage(self.driver)
     
