@@ -5,12 +5,16 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
 import inspect
 import logging
+import os
 
 @pytest.mark.usefixtures("setup")
 class BaseClass:
     
-    # def __init__(self, driver) -> None:
-    #     self.driver = driver
+    script_path = os.path.abspath(__file__)
+    folder_name = os.path.dirname(os.path.dirname(script_path))
+
+    # Set the download path to a subfolder within the current script's folder
+    log_path = os.path.join(folder_name, "logs/logfile.log")
     
     def explicit_wait(self, time, locator, text):
         wait = WebDriverWait(self.driver,10)
@@ -23,7 +27,7 @@ class BaseClass:
     def getLogger(self):
         loggerName = inspect.stack()[1][3]
         logger = logging.getLogger(loggerName)
-        fileHandler = logging.FileHandler('/Users/vaibhavarde/Desktop/TestAutomation/Selenium_Python_Automation/S_27_Selenium_Framework/logs/logfile.log')
+        fileHandler = logging.FileHandler(BaseClass.log_path)
         formatter = logging.Formatter("%(asctime)s :%(levelname)s : %(name)s :%(message)s")
         fileHandler.setFormatter(formatter)
 
