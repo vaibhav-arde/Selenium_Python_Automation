@@ -33,3 +33,4 @@ class HomePage:
     def success_alert_text(self):
         return self.driver.find_element(*HomePage.success_alert).text
     
+    
