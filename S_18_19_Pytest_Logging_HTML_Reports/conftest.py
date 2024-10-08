@@ -11,7 +11,7 @@ def setup():
 @pytest.fixture()
 def dataLoad():
     print("user profile data is being created")
-    return ["VaibhaV","Arde","vaibhavardeyacademy.com"]
+    return ["VaibhaV","Arde","vaibhavardeacademy.com"]
 
 
 @pytest.fixture(params=[("chrome","VaibhaV","Arde"), ("Firefox","VaibhaV"), ("IE","VA")])
