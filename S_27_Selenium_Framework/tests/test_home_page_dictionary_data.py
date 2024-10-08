@@ -5,6 +5,7 @@ import time
 from utilities.BaseClass import BaseClass
 from pages.home_page import HomePage
 import pytest
+from test_data.home_page_data import HomePageData
 
 class TestHomePageData(BaseClass):
         
@@ -36,6 +37,7 @@ class TestHomePageData(BaseClass):
         time.sleep(3)
         self.driver.refresh()
         
-    @pytest.fixture(params=[{"name":"VaibhaV", "gender":"Male"}, {"name":"Sheetal", "gender":"Female"}])
+    # @pytest.fixture(params=[{"name":"VaibhaV", "gender":"Male"}, {"name":"Sheetal", "gender":"Female"}])
+    @pytest.fixture(params=HomePageData.home_page_dictionary_data)
     def getDictionaryData(self, request):
         return request.param
